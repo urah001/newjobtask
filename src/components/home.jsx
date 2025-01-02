@@ -23,11 +23,11 @@ const Home = () => {
           {getusers.map((user) => (
             <li key={user.id}>
               {user.name}
-              <button className="user-button">
-                <Link className="App-link" to={`/user/${user.id}`}>
+              <Link className="App-link" to={`/user/${user.id}`}>
+                <button className="user-button">
                   <div className="link-profile">View Details</div>
-                </Link>
-              </button>
+                </button>
+              </Link>
             </li>
           ))}
         </ul>

@@ -16,7 +16,7 @@ const UserDetails = () => {
 
     fetchUser();
   }, [id]);
-
+//handle the null error , where by the page loads before the user object is collect
   if (!user) return <div>Loading...</div>;
 
   return (

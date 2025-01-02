@@ -50,13 +50,9 @@ Link {
   margin-left: 1rem;
 }
 .user-button:hover {
-  background: #003d9e;
+  background: #091e3f;
   transform: scale(1.05);
   box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
-}
-.user-button:active {
-  transform: scale(0.95);
-  background: #010b1d;
 }
 
 .user-profile-pic{

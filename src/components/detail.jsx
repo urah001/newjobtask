@@ -1,4 +1,3 @@
-// src/UserDetails.js
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -27,18 +26,27 @@ const UserDetails = () => {
         <h4>{user.name}</h4>
         <div>@{user.username}</div>
       </div>
-      <div>Email: {user.email}</div>
-      <div>Phone: {user.phone}</div>
-      <div>Website: {user.website}</div>
+      <div className="user-data">
+        <div>userID: {user.id}</div>
+        <div>Email: {user.email}</div>
+        <div>Phone: {user.phone}</div>
+        <div>Website: {user.website}</div>
+      </div>
+
       <h4>Address</h4>
       <div>
-        {" "}
-        {user.address.city},{user.address.street}, {user.address.suite},{" "}
+        {user.address.city},{user.address.street}, {user.address.suite},
         {user.address.zipcode}
       </div>
+        <div>
+          <h4> Geolocation</h4>
+          <div>lat : {user.address.geo.lat}</div>
+          <div>lng : {user.address.geo.lng}</div>
+        </div>
       <h4>Company</h4>
-      <h4>{user.company.name}</h4>
+      <div>{user.company.name}</div>
       <div>{user.company.catchPhrase}</div>
+      <div>{user.company.bs}</div>
     </div>
   );
 };

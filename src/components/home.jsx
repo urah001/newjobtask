@@ -1,34 +1,39 @@
-// this is the home directory
 import React, { useEffect, useState } from "react";
-import "../App.css";
 import { Link } from "react-router-dom";
+import "../App.css";
 
-function Home() {
-  const [getUsers, setgetUsers] = useState();
+const Home = () => {
+  const [getusers, setUsers] = useState([]);
+
   useEffect(() => {
-    const fecthUsers = async () => {
-      const resq = await fetch("https://jsonplaceholder.typicode.com/users");
-      const resp = await resq.json();
-      setgetUsers(resp);
+    const fetchUsers = async () => {
+      const resp = await fetch("https://jsonplaceholder.typicode.com/users");
+      const data = await resp.json();
+      setUsers(data);
     };
-    fecthUsers();
+
+    fetchUsers();
   }, []);
 
   return (
     <div className="App">
-      <header className="App-header">Home</header>
+      <header className="App-header">User List</header>
       <section className="App-section">
-        <h1>user list</h1>
         <ul>
-          {getUsers.map((user) => (
-            <li>
-              <Link to={`/user/${user.id}`}> view detail</Link>
+          {getusers.map((user) => (
+            <li key={user.id}>
+              {user.name}
+              <button className="user-button">
+                <Link className="App-link" to={`/user/${user.id}`}>
+                  <div className="link-profile">View Details</div>
+                </Link>
+              </button>
             </li>
           ))}
         </ul>
       </section>
     </div>
   );
-}
+};
 
 export default Home;

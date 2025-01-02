@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "../App.css";
 
 const Home = () => {
+  
   const [getusers, setUsers] = useState([]);
 
   useEffect(() => {
